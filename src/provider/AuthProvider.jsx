@@ -3,7 +3,6 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
-  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -45,12 +44,6 @@ const AuthProvider = ({ children }) => {
     return updateProfile(auth.currentUser, updatedData);
   };
 
-  // forget password
-  const forgotPassword = (email) => {
-    setLoading(true);
-    return sendPasswordResetEmail(auth, email);
-  };
-
   // signin with google
   const signInWithGoogle = () => {
     return signInWithPopup(auth, googleProvider);
@@ -76,7 +69,6 @@ const AuthProvider = ({ children }) => {
     loading,
     updateUserProfile,
     signInWithGoogle,
-    forgotPassword,
   };
 
   return (

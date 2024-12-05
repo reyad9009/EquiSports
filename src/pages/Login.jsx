@@ -89,9 +89,9 @@ const Login = () => {
             {/* {error.login && <label className="label">{error.login}</label>} */}
 
             <label className="label">
-              <Link to="/auth/forgot-password" className="label-text-alt link link-hover text-base mt-2">
+              <a className="label-text-alt link link-hover text-base mt-2">
                 Forgot password?
-              </Link>
+              </a>
             </label>
           </div>
           <div className="form-control">
