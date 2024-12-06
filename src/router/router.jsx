@@ -5,38 +5,44 @@ import Register from "../pages/Register";
 import HomeLayout from "../layouts/HomeLayout";
 import Home from "../layouts/Home";
 import Error from "../Error/Error";
-
+import AddEquipment from "../components/AddEquipment";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomeLayout></HomeLayout>,
     errorElement: <Error></Error>,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Home></Home>,
       },
-    ]
+      {
+        path: "all-sports-equipment",
+      },
+      {
+        path: "add-equipment",
+        element: <AddEquipment></AddEquipment>
+      },
+      {
+        path: "my-equipment"
+      }
+    ],
   },
-    {
-      path: "/",
-      element: <AuthLayout></AuthLayout>,
-      children: [
-        {
-            path: "/auth/login",
-            element: <Login></Login>
-        },
-        {
-            path: "/auth/register",
-            element: <Register></Register>
-        }
-      ]
-    },
-  ]);
+  {
+    path: "/",
+    element: <AuthLayout></AuthLayout>,
+    children: [
+      {
+        path: "/auth/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/auth/register",
+        element: <Register></Register>,
+      },
+    ],
+  },
+]);
 
 export default router;
-
-
-
-

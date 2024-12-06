@@ -22,14 +22,14 @@ const Navbar = () => {
 
       <li>
         <NavLink
-          to="/about"
+          to="/add-equipment"
           className={({ isActive }) =>
             isActive
               ? "bg-[#2196f3] text-lg text-white font-bold md:px-5 btn rounded-full hover:bg-transparent hover:text-[#2196f3]"
               : "bg-white text-lg font-bold md:px-5 btn rounded-full hover:border-[#2196f3] hover:bg-transparent hover:text-[#2196f3]"
           }
         >
-          About us
+          Add Equipment
         </NavLink>
       </li>
       <li>
