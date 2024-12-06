@@ -1,11 +1,69 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddEquipment = () => {
-    const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleAddEquipment = (event) => {
+    event.preventDefault();
+    const form = event.target;
+
+    const image = form.image.value;
+    const itemName = form.itemName.value;
+    const categoryName = form.categoryName.value;
+    const description = form.description.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const customization = form.customization.value;
+    const processingTime = form.processingTime.value;
+    const stockStatus = form.stockStatus.value;
+    const userEmail = form.userEmail.value;
+    const userName = form.userName.value;
+
+    const newAddedEquipment = {
+      image,
+      itemName,
+      categoryName,
+      description,
+      price,
+      rating,
+      customization,
+      processingTime,
+      stockStatus,
+      userEmail,
+      userName,
+    };
+    console.log(newAddedEquipment);
+
+    // send data to the server-MongoDB
+    fetch("http://localhost:5000/equipments", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newAddedEquipment),
+    })
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data);
+        if(data.insertedId){
+            Swal.fire({
+                title: 'Success!',
+                text:  `${itemName} Added Successfully`,
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+        }
+    })
+  };
+
   return (
     <div className="md:w-[70%] h-auto px-12 pt-10 pb-20 rounded-xl shadow-md">
-      <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10 items-end">
+      <form
+        onSubmit={handleAddEquipment}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10 items-end"
+      >
         <div className="form-control">
           <label className="label">
             <span className="label-text font-bold">Image URL</span>
@@ -136,9 +194,8 @@ const AddEquipment = () => {
             defaultValue={user?.displayName}
           />
         </div>
-        <input type="submit" className="btn font-bold btn-primary w-full"/>
+        <input type="submit" className="btn font-bold btn-primary w-full" />
       </form>
-
     </div>
   );
 };
