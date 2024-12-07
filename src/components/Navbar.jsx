@@ -34,14 +34,26 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/faq"
+          to="/all-sports-equipment"
           className={({ isActive }) =>
             isActive
               ? "bg-[#2196f3] lg:text-lg text-white font-bold md:px-5 btn rounded-full hover:bg-transparent hover:text-[#2196f3]"
               : "bg-white text-lg font-bold md:px-5 btn rounded-full hover:border-[#2196f3] hover:bg-transparent hover:text-[#2196f3]"
           }
         >
-          FAQ
+         All Sports Equipment
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/my-equipment"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-[#2196f3] lg:text-lg text-white font-bold md:px-5 btn rounded-full hover:bg-transparent hover:text-[#2196f3]"
+              : "bg-white text-lg font-bold md:px-5 btn rounded-full hover:border-[#2196f3] hover:bg-transparent hover:text-[#2196f3]"
+          }
+        >
+         My Equipment
         </NavLink>
       </li>
     </>

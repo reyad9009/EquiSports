@@ -25,7 +25,7 @@ const Register = () => {
     const email = form.get("email");
     const photo = form.get("photo");
     const password = form.get("password");
-    //console.log({ name, email, photo, password });
+    console.log({ name, email, photo, password });
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     if (!passwordRegex.test(password)) {
       toast.warn('Password Must have an Uppercase & Lowercase at least 6 character')
@@ -40,7 +40,7 @@ const Register = () => {
             navigate("/");
           })
           .catch((err) => {
-           // console.log(err);
+           //console.log(err);
           });
           toast.success('Registration successful')
         // navigate(location?.state ? location.state : "/");
@@ -48,19 +48,19 @@ const Register = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        // console.log(errorCode, errorMessage);
+        //console.log(errorCode, errorMessage);
       });
   };
   // for google signIn
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-       // console.log(result.user);
+       //console.log(result.user);
         navigate("/");
         toast.success('Registration successful')
       })
       .catch((error) => {
-       // console.log("Error", error.message);
+      // console.log("Error", error.message);
       
       });
   };

@@ -6,6 +6,9 @@ import HomeLayout from "../layouts/HomeLayout";
 import Home from "../layouts/Home";
 import Error from "../Error/Error";
 import AddEquipment from "../components/AddEquipment";
+import AllSportsEquipment from "../components/AllSportsEquipment";
+import MyEquipment from "../components/MyEquipment";
+import EquipmentDetails from "../components/EquipmentDetails";
 
 const router = createBrowserRouter([
   {
@@ -19,13 +22,20 @@ const router = createBrowserRouter([
       },
       {
         path: "all-sports-equipment",
+        element: <AllSportsEquipment></AllSportsEquipment>,
+        loader: () => fetch("http://localhost:5000/equipments"),
       },
       {
         path: "add-equipment",
-        element: <AddEquipment></AddEquipment>
+        element: <AddEquipment></AddEquipment>,
       },
       {
-        path: "my-equipment"
+        path: "my-equipment",
+        element: <MyEquipment />,
+      },
+      {
+        path: "details",
+        element: <EquipmentDetails></EquipmentDetails>
       }
     ],
   },

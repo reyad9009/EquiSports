@@ -52,7 +52,7 @@ const AddEquipment = () => {
                 title: 'Success!',
                 text:  `${itemName} Added Successfully`,
                 icon: 'success',
-                confirmButtonText: 'Cool'
+                confirmButtonText: 'Ok'
               })
         }
     })
@@ -130,7 +130,7 @@ const AddEquipment = () => {
           <input
             type="number"
             name="rating"
-            placeholder="Enter rating (1-5)"
+            placeholder="Enter rating (1.0-5.0)"
             className="input input-bordered"
             required
           />
