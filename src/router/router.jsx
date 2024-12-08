@@ -9,6 +9,7 @@ import AddEquipment from "../components/AddEquipment";
 import AllSportsEquipment from "../components/AllSportsEquipment";
 import MyEquipment from "../components/MyEquipment";
 import EquipmentDetails from "../components/EquipmentDetails";
+import UpdateMyEquipment from "../components/UpdateMyEquipment";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "my-equipment",
         element: <MyEquipment />,
+      },
+      {
+        path: "update",
+        element: <UpdateMyEquipment></UpdateMyEquipment>
       },
       {
         path: "/all-sports-equipment/details/:id", // Add :id here to capture the dynamic value

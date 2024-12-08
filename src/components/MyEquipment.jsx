@@ -1,12 +1,13 @@
 import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import MyEquipmentCard from "./MyEquipmentCard";
 
 const MyEquipment = () => {
-  const [equipment, setEquipment] = useState([]);
+  const [equipments, setEquipment] = useState([]);
   const { user } = useContext(AuthContext); // Access the logged-in user from context
   const userEmail = user?.email; 
   console.log(userEmail);
-  console.log(equipment)
+  console.log(equipments)
 
   useEffect(() => {
       // Fetch data for the logged-in user's email
@@ -20,9 +21,9 @@ const MyEquipment = () => {
   return (
     <div>
       <h2>My Equipment</h2>
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10 items-end">
         {
-          equipment.map(equ => (<p key={equ._id}>{equ.name}</p>))
+          equipments.map(equipment => (<MyEquipmentCard key={equipment._id} equipment={equipment}></MyEquipmentCard>))
         }
       </div>
     </div>
