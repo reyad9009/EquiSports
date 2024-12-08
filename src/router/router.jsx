@@ -34,13 +34,14 @@ const router = createBrowserRouter([
         element: <MyEquipment />,
       },
       {
-        path: "details",
-        element: <EquipmentDetails></EquipmentDetails>
+        path: "/all-sports-equipment/details/:id", // Add :id here to capture the dynamic value
+        element: <EquipmentDetails />,
+        loader: ({ params }) => fetch(`http://localhost:5000/all-sports-equipment/details/${params.id}`),
       }
     ],
   },
   {
-    path: "/",
+    path: "/auth",
     element: <AuthLayout></AuthLayout>,
     children: [
       {

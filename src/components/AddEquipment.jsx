@@ -18,8 +18,8 @@ const AddEquipment = () => {
     const customization = form.customization.value;
     const processingTime = form.processingTime.value;
     const stockStatus = form.stockStatus.value;
-    const userEmail = form.userEmail.value;
-    const userName = form.userName.value;
+    const email = form.email.value;
+    const name = form.name.value;
 
     const newAddedEquipment = {
       image,
@@ -31,8 +31,8 @@ const AddEquipment = () => {
       customization,
       processingTime,
       stockStatus,
-      userEmail,
-      userName,
+      email,
+      name,
     };
     console.log(newAddedEquipment);
 
@@ -176,7 +176,7 @@ const AddEquipment = () => {
           </label>
           <input
             type="email"
-            name="userEmail"
+            name="email"
             className="input input-bordered"
             readOnly
             defaultValue={user?.email}
@@ -188,7 +188,7 @@ const AddEquipment = () => {
           </label>
           <input
             type="text"
-            name="userName"
+            name="name"
             className="input input-bordered"
             readOnly
             defaultValue={user?.displayName}

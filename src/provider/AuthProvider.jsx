@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
@@ -34,9 +35,20 @@ const AuthProvider = ({ children }) => {
   // logout
   const logOut = () => {
     setLoading(true);
-    toast.success("Logout successful");
+    toast.success('Logout successful')
     return signOut(auth);
   };
+
+  // update user profile
+  const updateUserProfile = (updatedData) => {
+    return updateProfile(auth.currentUser, updatedData);
+  };
+
+  // forget password
+  // const forgotPassword = (email) => {
+  //   setLoading(true);
+  //   return sendPasswordResetEmail(auth, email)
+  // };
 
   // signin with google
   const signInWithGoogle = () => {
@@ -61,6 +73,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     userLogin,
     loading,
+    updateUserProfile,
     signInWithGoogle,
   };
 
