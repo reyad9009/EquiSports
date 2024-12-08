@@ -1,40 +1,74 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateMyEquipment = () => {
-    const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  const updateEquipment = useLoaderData();
+  const {
+    _id,
+    image,
+    itemName,
+    categoryName,
+    description,
+    price,
+    rating,
+    customization,
+    processingTime,
+    stockStatus,
+  } = updateEquipment;
 
-    const handleUpdateMyEquipment = (event) => {
-        event.preventDefault();
-        const form = event.target;
-    
-        const image = form.image.value;
-        const itemName = form.itemName.value;
-        const categoryName = form.categoryName.value;
-        const description = form.description.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-        const customization = form.customization.value;
-        const processingTime = form.processingTime.value;
-        const stockStatus = form.stockStatus.value;
-        const email = form.email.value;
-        const name = form.name.value;
-    
-        const UpdatedMyEquipment = {
-          image,
-          itemName,
-          categoryName,
-          description,
-          price,
-          rating,
-          customization,
-          processingTime,
-          stockStatus,
-          email,
-          name,
-        };
-        console.log(UpdatedMyEquipment);
-    }
+  const handleUpdateMyEquipment = (event) => {
+    event.preventDefault();
+    const form = event.target;
+
+    const image = form.image.value;
+    const itemName = form.itemName.value;
+    const categoryName = form.categoryName.value;
+    const description = form.description.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const customization = form.customization.value;
+    const processingTime = form.processingTime.value;
+    const stockStatus = form.stockStatus.value;
+    const email = form.email.value;
+    const name = form.name.value;
+
+    const UpdatedMyEquipment = {
+      image,
+      itemName,
+      categoryName,
+      description,
+      price,
+      rating,
+      customization,
+      processingTime,
+      stockStatus,
+      email,
+      name
+    };
+    console.log(UpdatedMyEquipment);
+    fetch(`http://localhost:5000/my-equipments/update/${_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(UpdatedMyEquipment),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+            Swal.fire({
+              title: "Update Success!",
+              text: "Equipment Updated Successfully",
+              icon: "success",
+              confirmButtonText: "Ok",
+            });
+          }
+      });
+  };
 
   return (
     <div className="md:w-[70%] h-auto px-12 pt-10 pb-20 rounded-xl shadow-md">
@@ -181,7 +215,7 @@ const UpdateMyEquipment = () => {
             defaultValue={user?.displayName}
           />
         </div>
-        <input type="submit" className="btn font-bold btn-primary w-full" />
+        <input type="submit" value="Update" className="btn font-bold btn-primary w-full" />
       </form>
     </div>
   );

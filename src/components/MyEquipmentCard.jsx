@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const MyEquipmentCard = ({ equipment }) => {
+const MyEquipmentCard = ({ equipment, }) => {
   const {
     image,
     itemName,
@@ -16,6 +16,38 @@ const MyEquipmentCard = ({ equipment }) => {
     userName,
     _id,
   } = equipment;
+
+  const handelDeleteMyEquipmentCard =(_id) => {
+    console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://coffee-store-server-three-omega.vercel.app/coffee/${_id}`,{
+            method: 'DELETE'
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your coffee has been deleted.",
+                icon: "success",
+              });
+              const remaining = coffees.filter(cof => cof._id !== _id);
+              setCoffees(remaining)
+            }
+          });
+      }
+    });
+  }
   return (
     <div>
       <div className="card card-compact lg:w-[25rem] lg:h-[35] w-[22rem] flex flex-col border">
@@ -40,11 +72,11 @@ const MyEquipmentCard = ({ equipment }) => {
           </span>
           <div className="card-actions justify-start">
             <Link>
-              <button className="px-6 py-3 font-bold rounded-full bg-[#2196f3] text-white text-base mt-2 mb-4">
+              <button onClick={() => handelDeleteMyEquipmentCard(_id)} className="px-6 py-3 font-bold rounded-full bg-[#2196f3] text-white text-base mt-2 mb-4">
                 Delete ❌
               </button>
             </Link>
-            <Link to='update'>
+            <Link to={`/my-equipments/update/${_id}`}>
               <button className="px-6 py-3 font-bold rounded-full bg-[#2196f3] text-white text-base mt-2 mb-4">
                 Update ✏️
               </button>

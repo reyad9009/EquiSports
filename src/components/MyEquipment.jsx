@@ -11,7 +11,7 @@ const MyEquipment = () => {
 
   useEffect(() => {
       // Fetch data for the logged-in user's email
-      fetch(`http://localhost:5000/my-equipment/${user?.email}`)
+      fetch(`http://localhost:5000/my-equipments/${user?.email}`)
         .then(res => res.json())
         .then(data => setEquipment(data)) // Set data to state
         .catch((error) => console.error("Error fetching equipment:", error));
@@ -23,7 +23,7 @@ const MyEquipment = () => {
       <h2>My Equipment</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10 items-end">
         {
-          equipments.map(equipment => (<MyEquipmentCard key={equipment._id} equipment={equipment}></MyEquipmentCard>))
+          equipments.map(equipment => (<MyEquipmentCard equipments={equipments} setEquipment={setEquipment}  key={equipment._id} equipment={equipment}></MyEquipmentCard>))
         }
       </div>
     </div>

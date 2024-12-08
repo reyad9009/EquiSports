@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "all-sports-equipment",
+        path: "all-sports-equipments",
         element: <AllSportsEquipment></AllSportsEquipment>,
         loader: () => fetch("http://localhost:5000/equipments"),
       },
@@ -31,17 +31,18 @@ const router = createBrowserRouter([
         element: <AddEquipment></AddEquipment>,
       },
       {
-        path: "my-equipment",
+        path: "my-equipments",
         element: <MyEquipment />,
       },
       {
-        path: "update",
-        element: <UpdateMyEquipment></UpdateMyEquipment>
+        path: "/my-equipments/update/:id",
+        element: <UpdateMyEquipment></UpdateMyEquipment>,
+        loader: ({params}) => fetch(`http://localhost:5000/my-equipments/update/${params.id}`),
       },
       {
-        path: "/all-sports-equipment/details/:id", // Add :id here to capture the dynamic value
+        path: "/all-sports-equipments/details/:id", // Add :id here to capture the dynamic value
         element: <EquipmentDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/all-sports-equipment/details/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/all-sports-equipments/details/${params.id}`),
       }
     ],
   },

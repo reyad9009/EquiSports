@@ -194,7 +194,7 @@ const AddEquipment = () => {
             defaultValue={user?.displayName}
           />
         </div>
-        <input type="submit" className="btn font-bold btn-primary w-full" />
+        <input type="submit" value="Submit" className="btn font-bold btn-primary w-full" />
       </form>
     </div>
   );
