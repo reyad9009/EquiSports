@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { Tooltip } from "react-tooltip";
+import Theme from "./Theme";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -41,7 +42,7 @@ const Navbar = () => {
               : "bg-white text-lg font-bold md:px-5 btn rounded-full hover:border-[#2196f3] hover:bg-transparent hover:text-[#2196f3]"
           }
         >
-         All Sports Equipment
+          All Sports Equipment
         </NavLink>
       </li>
       <li>
@@ -53,7 +54,7 @@ const Navbar = () => {
               : "bg-white text-lg font-bold md:px-5 btn rounded-full hover:border-[#2196f3] hover:bg-transparent hover:text-[#2196f3]"
           }
         >
-         My Equipment
+          My Equipment
         </NavLink>
       </li>
     </>
@@ -99,6 +100,11 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
+
+          <div className="mr-5">
+            <Theme></Theme>
+          </div>
+
           <div className="md:pr-5 pr-4">
             {user && user?.email ? (
               <div>

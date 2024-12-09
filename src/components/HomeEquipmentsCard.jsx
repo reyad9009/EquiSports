@@ -4,8 +4,6 @@ const HomeEquipmentsCard = ({ homeEquipments }) => {
   const {
     image,
     itemName,
-    category,
-    description,
     price,
     rating,
     customization,
@@ -15,16 +13,13 @@ const HomeEquipmentsCard = ({ homeEquipments }) => {
   return (
     <div>
       <div>
-        <div className="card card-compact lg:w-[25rem] lg:h-[35] w-[22rem] flex flex-col border">
+        <div className="card card-compact lg:w-[22rem] lg:h-[30] w-[22rem] flex flex-col border">
           <figure className="">
             <img className="w-[100%]" src={image} />
           </figure>
           <div className="card-body flex flex-grow justify-end ml-4">
             <span className="card-title font-bold text-2xl">{itemName}</span>
             <span className="font-semibold text-base">Price: {price} $</span>
-            <span className="font-semibold text-base">
-              Description: {description}
-            </span>
             <span className="font-semibold text-base">
               Customization: {customization}
             </span>
@@ -35,9 +30,7 @@ const HomeEquipmentsCard = ({ homeEquipments }) => {
             <span className="font-semibold text-base">
               Stock Status: {stockStatus}
             </span>
-            <span className="font-semibold text-base">
-              category: {category}
-            </span>
+           
 
             <div className="card-actions justify-start">
               <button
