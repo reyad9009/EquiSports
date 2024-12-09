@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { PiSortAscendingBold, PiSortDescendingBold } from "react-icons/pi"; // Import icons
 import { AuthContext } from "../provider/AuthProvider";
 import Loading from "./Loading";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const AllSportsEquipment = () => {
   const equipments = useLoaderData();
@@ -22,9 +23,11 @@ const AllSportsEquipment = () => {
 
   return (
     <div>
-      <h2 className="text-3xl text-center mb-16 font-bold">
-        All Sports Equipment
-      </h2>
+      <Slide>
+        <h2 className="text-3xl text-center mb-16 font-bold">
+          All Sports Equipment
+        </h2>
+      </Slide>
       {loading ? (
         <Loading></Loading>
       ) : (
@@ -51,12 +54,12 @@ const AllSportsEquipment = () => {
               {/* head */}
               <thead className="font-bold text-lg text-black">
                 <tr>
-                  <th></th>
+                  <th>Si</th>
                   <th>Name</th>
                   <th>Category Name</th>
                   <th>Price</th>
                   <th>Stock Status</th>
-                  <th></th>
+                  <th>Details</th>
                 </tr>
               </thead>
 
@@ -64,15 +67,28 @@ const AllSportsEquipment = () => {
                 {sortedEquipments.map((equipment, index) => (
                   <tr className="hover:bg-slate-200" key={equipment._id}>
                     <th>{index + 1}</th>
-                    <td>{equipment.itemName}</td>
-                    <td>{equipment.category}</td>
-                    <td>{equipment.price}</td>
-                    <td>{equipment.stockStatus}</td>
+                    <td>
+                      <div className="flex items-center gap-3">
+                        <div className="avatar">
+                          <div className="mask mask-squircle h-14 w-14">
+                            <img
+                              src={equipment.image}
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <div className="font-bold">{equipment.itemName}</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="font-bold">{equipment.category}</td>
+                    <td className="font-bold">{equipment.price}</td>
+                    <td className="font-bold">{equipment.stockStatus}</td>
                     <td>
                       <Link
                         to={`/all-sports-equipments/details/${equipment._id}`}
                       >
-                        <button className="btn">View Details</button>
+                        <button className="btn font-bold">View Details</button>
                       </Link>
                     </td>
                   </tr>
