@@ -14,7 +14,7 @@ const AllSportsEquipment = () => {
       return isAscending ? priceA - priceB : priceB - priceA;
     });
     setSortedEquipments(sorted);
-    setIsAscending(!isAscending); // Toggle sort order
+    setIsAscending(!isAscending);
   };
 
   return (
