@@ -11,7 +11,7 @@ const AddEquipment = () => {
 
     const image = form.image.value;
     const itemName = form.itemName.value;
-    const categoryName = form.categoryName.value;
+    const category = form.category.value;
     const description = form.description.value;
     const price = form.price.value;
     const rating = form.rating.value;
@@ -24,7 +24,7 @@ const AddEquipment = () => {
     const newAddedEquipment = {
       image,
       itemName,
-      categoryName,
+      category,
       description,
       price,
       rating,
@@ -94,7 +94,7 @@ const AddEquipment = () => {
           </label>
           <input
             type="text"
-            name="categoryName"
+            name="category"
             placeholder="Enter category name"
             className="input input-bordered"
             required

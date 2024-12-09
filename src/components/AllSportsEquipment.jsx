@@ -65,7 +65,7 @@ const AllSportsEquipment = () => {
                   <tr className="hover:bg-slate-200" key={equipment._id}>
                     <th>{index + 1}</th>
                     <td>{equipment.itemName}</td>
-                    <td>{equipment.categoryName}</td>
+                    <td>{equipment.category}</td>
                     <td>{equipment.price}</td>
                     <td>{equipment.stockStatus}</td>
                     <td>

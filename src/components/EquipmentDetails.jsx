@@ -9,15 +9,13 @@ const EquipmentDetails = () => {
   const {
     image,
     itemName,
-    categoryName,
+    category,
     description,
     price,
     rating,
     customization,
     processingTime,
     stockStatus,
-    email,
-    userName,
   } = equipment;
 
   return (
@@ -38,7 +36,7 @@ const EquipmentDetails = () => {
         <div className="flex items-center w-[100%]  justify-between">
           <div className="flex flex-col">
             <span className="card-title text-3xl ">{itemName}</span>
-            <span className="">Category: {categoryName}</span>
+            <span className="">Category: {category}</span>
             <span>Description : {description}</span>
             <span>Price : {price}</span>
             <span>Rating : {rating}</span>

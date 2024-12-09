@@ -11,6 +11,7 @@ import MyEquipment from "../components/MyEquipment";
 import EquipmentDetails from "../components/EquipmentDetails";
 import UpdateMyEquipment from "../components/UpdateMyEquipment";
 import PrivateRout from "./PrivateRout";
+import HomeEquipments from "../components/HomeEquipments";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        children: [
+          {
+            path: "/",
+            element: <HomeEquipments></HomeEquipments>,
+            loader: () => fetch("http://localhost:5000/home-equipments"),
+          }
+        ]
       },
       {
         path: "all-sports-equipments",
