@@ -20,7 +20,7 @@ const MyEquipment = () => {
 
   return (
     <div>
-      <h2>My Equipment</h2>
+      <h2 className="font-bold text-3xl mb-20 mt-10">You have added all the equipment here</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10 items-end">
         {
           equipments.map(equipment => (<MyEquipmentCard equipments={equipments} setEquipment={setEquipment}  key={equipment._id} equipment={equipment}></MyEquipmentCard>))
