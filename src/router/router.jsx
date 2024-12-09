@@ -24,11 +24,17 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         children: [
           {
+            path: "/categories/:category",
+            element: <HomeEquipments></HomeEquipments>,
+            loader: ({ params }) =>
+              fetch(`http://localhost:5000/categories/${params.category}`),
+          },
+          {
             path: "/",
             element: <HomeEquipments></HomeEquipments>,
             loader: () => fetch("http://localhost:5000/home-equipments"),
-          }
-        ]
+          },
+        ],
       },
       {
         path: "all-sports-equipments",
