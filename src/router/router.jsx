@@ -10,6 +10,7 @@ import AllSportsEquipment from "../components/AllSportsEquipment";
 import MyEquipment from "../components/MyEquipment";
 import EquipmentDetails from "../components/EquipmentDetails";
 import UpdateMyEquipment from "../components/UpdateMyEquipment";
+import PrivateRout from "./PrivateRout";
 
 const router = createBrowserRouter([
   {
@@ -28,22 +29,42 @@ const router = createBrowserRouter([
       },
       {
         path: "add-equipment",
-        element: <AddEquipment></AddEquipment>,
+        element: (
+          <PrivateRout>
+            <AddEquipment></AddEquipment>
+          </PrivateRout>
+        ),
       },
       {
         path: "my-equipments",
-        element: <MyEquipment />,
+        element: (
+          <PrivateRout>
+            <MyEquipment />
+          </PrivateRout>
+        ),
       },
       {
         path: "/my-equipments/update/:id",
-        element: <UpdateMyEquipment></UpdateMyEquipment>,
-        loader: ({params}) => fetch(`http://localhost:5000/my-equipments/update/${params.id}`),
+        element: (
+          <PrivateRout>
+            <UpdateMyEquipment></UpdateMyEquipment>
+          </PrivateRout>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/my-equipments/update/${params.id}`),
       },
       {
-        path: "/all-sports-equipments/details/:id", // Add :id here to capture the dynamic value
-        element: <EquipmentDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/all-sports-equipments/details/${params.id}`),
-      }
+        path: "/all-sports-equipments/details/:id",
+        element: (
+          <PrivateRout>
+            <EquipmentDetails />
+          </PrivateRout>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/all-sports-equipments/details/${params.id}`
+          ),
+      },
     ],
   },
   {
