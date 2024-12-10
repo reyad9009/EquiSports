@@ -155,7 +155,7 @@ const UpdateMyEquipment = () => {
               <span className="label-text font-bold">Rating</span>
             </label>
             <input
-              type="number"
+              type="text"
               name="rating"
               placeholder="Enter rating"
               className="input input-bordered"

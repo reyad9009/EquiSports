@@ -23,14 +23,7 @@ const HomeEquipmentsCategory = () => {
     <div>
       <Zoom>
         <div className="flex flex-col lg:flex-row lg:space-x-4 gap-6 lg:gap-0  p-4">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive
-                ? "bg-[#2196f3] text-lg text-white font-bold px-10 btn rounded-full hover:bg-transparent hover:text-[#2196f3]"
-                : "bg-white text-lg px-10 btn rounded-full border-[#2196f3] hover:border-[#2196f3] hover:bg-transparent hover:text-[#2196f3]"
-            }
-          >
+          <NavLink to="/" className={({ isActive }) => (isActive ? "" : "")}>
             All Equipment
           </NavLink>
 
@@ -39,9 +32,11 @@ const HomeEquipmentsCategory = () => {
               key={category.id}
               to={`/categories/${category.category}`}
               className={({ isActive }) =>
-                isActive
-                  ? "bg-[#2196f3] text-lg text-white font-bold px-10 btn rounded-full hover:bg-transparent hover:text-[#2196f3]"
-                  : "bg-white text-lg px-10 btn rounded-full border-[#2196f3] hover:border-[#2196f3] hover:bg-transparent hover:text-[#2196f3]"
+                `relative inline-block pb-2 ${
+                  isActive
+                    ? "border-b-4 border-[#000000]"
+                    : "hover:before:w-full hover:before:bg-[#000000]"
+                } before:absolute before:bottom-0 before:left-0 before:h-[4px] before:w-0 before:bg-transparent before:transition-all before:duration-300`
               }
             >
               {category.category}

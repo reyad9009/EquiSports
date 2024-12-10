@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HomeEquipmentsCard = ({ homeEquipments }) => {
   const {
+    _id,
     image,
     itemName,
     price,
@@ -33,12 +35,13 @@ const HomeEquipmentsCard = ({ homeEquipments }) => {
            
 
             <div className="card-actions justify-start">
+              <Link to={`/all-sports-equipments/details/${_id}`}>
               <button
                 onClick={() => handelDeleteMyEquipmentCard(_id)}
                 className="px-6 py-3 font-bold rounded-full bg-[#2196f3] text-white text-base mt-2 mb-4"
               >
                 View Details
-              </button>
+              </button></Link>
             </div>
           </div>
         </div>

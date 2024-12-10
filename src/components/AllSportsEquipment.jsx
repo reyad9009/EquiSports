@@ -56,7 +56,7 @@ const AllSportsEquipment = () => {
                 <tr>
                   <th>Si</th>
                   <th>Name</th>
-                  <th>Category Name</th>
+                  <th>Category</th>
                   <th>Price</th>
                   <th>Stock Status</th>
                   <th>Details</th>
@@ -82,7 +82,7 @@ const AllSportsEquipment = () => {
                       </div>
                     </td>
                     <td className="font-bold">{equipment.category}</td>
-                    <td className="font-bold">{equipment.price}</td>
+                    <td className="font-bold">${equipment.price}</td>
                     <td className="font-bold">{equipment.stockStatus}</td>
                     <td>
                       <Link

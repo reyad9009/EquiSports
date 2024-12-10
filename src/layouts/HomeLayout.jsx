@@ -13,7 +13,7 @@ const HomeLayout = () => {
       <div className="max-w-[100rem] mx-auto">
         <Navbar></Navbar>
       </div>
-      <div className="flex justify-center items-center mt-10">
+      <div className="flex flex-col justify-center items-center my-16 gap-10">
         <Outlet></Outlet>
       </div>
       <div className="w-full">

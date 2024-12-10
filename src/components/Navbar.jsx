@@ -90,7 +90,7 @@ const Navbar = () => {
           </div>
           <Link to="/">
             <a className="lg:btn lg:btn-ghost lg:text-[#2196f3] lg:text-3xl text-xl font-bold text-[#2196f3]">
-              Equi-Sports
+            GearUp Sports
             </a>
           </Link>
         </div>

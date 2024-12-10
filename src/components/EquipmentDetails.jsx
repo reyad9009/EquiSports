@@ -28,7 +28,7 @@ const EquipmentDetails = () => {
           </button>
         </Link>
       </div>
-      <div className="flex flex-col lg:flex-row lg:justify-stretch gap-16 p-6 border rounded-xl w-[22rem] lg:w-[65rem]">
+      <div className="flex flex-col lg:flex-row lg:justify-stretch gap-16 p-6 border rounded-xl w-[22rem] lg:w-[50rem]">
         <figure>
           <img src={image} className="w-[800px] rounded-lg" />
         </figure>
@@ -45,7 +45,7 @@ const EquipmentDetails = () => {
             <span>processingTime : {processingTime}</span>
             <br />
             <button className="btn bg-[#2196f3] mt-4 text-white text-lg">
-              Continue Course
+              Buy now
             </button>
           </div>
         </div>
