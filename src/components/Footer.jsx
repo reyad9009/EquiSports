@@ -7,13 +7,14 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
+import { MdSportsVolleyball } from "react-icons/md";
 
 const Footer = () => {
   return (
     <div className=" mt-[10%] bg-[#fd6a6a] pt-20">
       <footer className="footer flex lg:justify-center lg:gap-40 pl-5 lg:flex-row flex-col text-base-content  bg-[#fd6a6a]">
         <nav className="">
-          <h6 className="font-extrabold text-2xl text-balance">EquiSports</h6>
+          <h6 className="font-extrabold text-2xl text-balance flex items-center gap-3"> <MdSportsVolleyball /> EquiSports</h6>
           <span className="lg:w-[25rem] text-wrap">
             EquiSports is your one-stop destination for high-quality sports
             equipment, offering a wide range of products to meet the needs of

@@ -5,10 +5,10 @@ import { Slide } from "react-awesome-reveal";
 
 const MyEquipment = () => {
   const [equipments, setEquipment] = useState([]);
-  const { user } = useContext(AuthContext); // Access the logged-in user from context
+  const { user } = useContext(AuthContext); 
   const userEmail = user?.email;
-  console.log(userEmail);
-  console.log(equipments);
+  //console.log(userEmail);
+  //console.log(equipments);
 
   useEffect(() => {
     // Fetch data for the logged-in user's email

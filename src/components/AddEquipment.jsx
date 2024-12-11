@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { Slide } from "react-awesome-reveal";
@@ -35,7 +35,7 @@ const AddEquipment = () => {
       email,
       name,
     };
-    console.log(newAddedEquipment);
+    //console.log(newAddedEquipment);
 
     // send data to the server-MongoDB
     fetch("http://localhost:5000/equipments", {
@@ -47,7 +47,8 @@ const AddEquipment = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+   
+       // console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
@@ -55,6 +56,7 @@ const AddEquipment = () => {
             icon: "success",
             confirmButtonText: "Ok",
           });
+          event.target.reset();
         }
       });
   };

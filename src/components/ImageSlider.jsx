@@ -27,7 +27,7 @@ const ImageSlider = () => {
   }, []);
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto mt-10">
+    <div className="relative lg:w-full w-[95%] max-w-4xl mx-auto lg:mt-10">
 
       <div className="overflow-hidden rounded-lg shadow-lg">
 

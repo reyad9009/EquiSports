@@ -19,7 +19,7 @@ const MyEquipmentCard = ({ equipment, setEquipment, equipments }) => {
   } = equipment;
 
   const handelDeleteMyEquipmentCard = (_id) => {
-    console.log(_id);
+    //console.log(_id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -35,7 +35,7 @@ const MyEquipmentCard = ({ equipment, setEquipment, equipments }) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+           // console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",

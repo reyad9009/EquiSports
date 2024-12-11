@@ -90,8 +90,8 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/">
-            <a className="lg:btn lg:btn-ghost lg:text-[#f55353] lg:text-3xl text-xl font-bold text-[#f55353]">
-            <MdSportsVolleyball />EquiSports
+            <a className="lg:text-[#f55353] flex gap-5 items-center lg:text-3xl text-xl font-bold text-[#f55353]">
+            <MdSportsVolleyball className="lg:text-7xl text-5xl"/> <span className="lg:block hidden">EquiSports</span>
             </a>
           </Link>
         </div>

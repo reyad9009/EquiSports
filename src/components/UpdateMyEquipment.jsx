@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -49,7 +49,7 @@ const UpdateMyEquipment = () => {
       email,
       name,
     };
-    console.log(UpdatedMyEquipment);
+   // console.log(UpdatedMyEquipment);
     fetch(`http://localhost:5000/my-equipments/update/${_id}`, {
       method: "PUT",
       headers: {
@@ -59,7 +59,7 @@ const UpdateMyEquipment = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+       // console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Update Success!",

@@ -8,7 +8,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const EquipmentDetails = () => {
   const equipment = useLoaderData();
-  console.log(equipment._id); // Get equipment data from loader
+  //console.log(equipment._id); // Get equipment data from loader
 
   const {
     image,

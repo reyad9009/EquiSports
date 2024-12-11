@@ -10,7 +10,7 @@ const Support = () => {
       <div className="font-bold text-4xl mb-10">Why You Trust Us?</div>
       <div className="flex flex-col lg:flex-row">
         <div className="flex flex-col items-center  gap-5">
-          <LiaShippingFastSolid className="text-7xl" />
+          <LiaShippingFastSolid className="text-7xl text-[#f55353]" />
           <h1 className="font-bold text-2xl">Worldwide Shipping</h1>
           <p className="text-xl w-[60%]">
             Ensures the delivery of goods to customers across the globe,
@@ -18,7 +18,7 @@ const Support = () => {
           </p>
         </div>
         <div className="flex flex-col items-center gap-5">
-          <TbTruckReturn className="text-7xl" />
+          <TbTruckReturn className="text-7xl text-[#f55353]" />
           <h1 className="font-bold text-2xl">Easy 30 Day Returns</h1>
           <p className="text-xl w-[60%]">
             Ensures a hassle-free process for returning products within 30 days
@@ -26,7 +26,7 @@ const Support = () => {
           </p>
         </div>
         <div className="flex flex-col items-center  gap-5">
-          <CiWallet className="text-7xl" />
+          <CiWallet className="text-7xl text-[#f55353]" />
           <h1 className="font-bold text-2xl">Money Back Guarantee</h1>
           <p className="text-xl w-[60%]">
             Ensures customers can receive a full refund if they are not
