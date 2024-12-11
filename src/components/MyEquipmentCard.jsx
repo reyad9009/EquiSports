@@ -53,9 +53,9 @@ const MyEquipmentCard = ({ equipment, setEquipment, equipments }) => {
   };
   return (
     <div>
-      <div className="card card-compact lg:w-[25rem] lg:h-[35] w-[22rem] flex flex-col border">
+      <div className="card card-compact lg:w-[25rem] lg:h-[20] w-[22rem] flex flex-col border">
         <figure className="">
-          <img className="w-[100%]" src={image} />
+          <img className="w-[50%]" src={image} />
         </figure>
         <div className="card-body flex flex-grow justify-end ml-4">
           <span className="card-title font-bold text-2xl">{itemName}</span>
@@ -75,16 +75,16 @@ const MyEquipmentCard = ({ equipment, setEquipment, equipments }) => {
           </span>
           <span className="font-semibold text-base">category: {category}</span>
           
-          <div className="card-actions justify-start">
+          <div className="card-actions justify-between">
             <button
               onClick={() => handelDeleteMyEquipmentCard(_id)}
-              className="px-6 py-3 font-bold rounded-full bg-[#2196f3] text-white text-base mt-2 mb-4"
+              className="px-6 py-3 font-bold rounded-full bg-[#f55353] text-white text-base mt-2 mb-4"
             >
-              Delete ❌
+              Delete
             </button>
             <Link to={`/my-equipments/update/${_id}`}>
-              <button className="px-6 py-3 font-bold rounded-full bg-[#2196f3] text-white text-base mt-2 mb-4">
-                Update ✏️
+              <button className="px-6 py-3 font-bold rounded-full bg-[#f55353] text-white text-base mt-2 mb-4">
+                Update
               </button>
             </Link>
           </div>

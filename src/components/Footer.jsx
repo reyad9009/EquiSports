@@ -1,49 +1,50 @@
 import React from "react";
-import { AiFillInstagram } from "react-icons/ai";
-import { BsYoutube } from "react-icons/bs";
-import { FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa";
-import { ImFacebook2 } from "react-icons/im";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa";
+import { IoLocationOutline } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <div className=" mt-[10%] bg-[#2196f3]">
-      <div className="text-center">
-        <h1 className="font-bold text-3xl py-10">GearUp Sports</h1>
-      </div>
-      <footer className="footer flex lg:justify-evenly pl-5 lg:flex-row flex-col text-base-content  bg-[#2196f3]">
+    <div className=" mt-[10%] bg-[#fd6a6a] pt-20">
+      <footer className="footer flex lg:justify-center lg:gap-40 pl-5 lg:flex-row flex-col text-base-content  bg-[#fd6a6a]">
         <nav className="">
-          <h6 className="font-extrabold text-2xl text-balance">Services</h6>
-          <a className="link link-hover text-base font-semibold">
-            Skill Development
-          </a>
-          <a className="link link-hover text-base font-semibold">Career </a>
-          <a className="link link-hover text-base font-semibold">Job Search</a>
-          <a className="link link-hover text-base font-semibold">Interview </a>
-          <a className="link link-hover text-base font-semibold">
-            Resume Review{" "}
-          </a>
-          <a className="link link-hover text-base font-semibold">
-            Career Transition Support{" "}
-          </a>
+          <h6 className="font-extrabold text-2xl text-balance">EquiSports</h6>
+          <span className="lg:w-[25rem] text-wrap">
+            EquiSports is your one-stop destination for high-quality sports
+            equipment, offering a wide range of products to meet the needs of
+            athletes and enthusiasts.
+          </span>
+          <span className="flex gap-4 text-2xl">
+            <FaFacebook />
+            <FaInstagram />
+            <FaTwitter />
+            <FaYoutube />
+          </span>
         </nav>
         <nav className="">
-          <h6 className="font-extrabold text-2xl text-balance">Social</h6>
-          <a className="flex items-center gap-2 link link-hover text-base ">
-            <span>Facebook </span><ImFacebook2 />
-          </a>
-          <a className="flex items-center gap-2 link link-hover text-base ">
-          <span>Instagram </span><AiFillInstagram />
-          </a>
-          <a className="flex items-center gap-2 link link-hover text-base ">
-          <span>Youtube </span><FaYoutube />
-          </a>
-          <a className="flex items-center gap-2 link link-hover text-base ">
-          <span>Twitter </span><FaTwitter />
-          </a>
+          <h6 className="font-extrabold text-2xl text-balance">Information</h6>
+          <a href="">Shipping</a>
+          <a href="">Sitemap</a>
+          <a href="">Size Chart</a>
+          <a href="">Terms & Conditions</a>
+          <a href="">Contact</a>
         </nav>
         <form>
-          <h6 className="font-extrabold text-2xl gap-3 text-balance">Contact</h6>
-          <h1 className="text-base flex items-center"><FaWhatsapp /> <span> +8801954345645</span></h1>
+          <h6 className="font-extrabold text-2xl gap-3 text-balance">
+            Contact
+          </h6>
+          <h1 className="text-base flex items-center">
+            <IoLocationOutline className="text-xl" />{" "}
+            <span>33 New Montgomery St. Ste 750 San Francisco</span>
+          </h1>
+          <h1 className="text-base flex items-center">
+            <FaWhatsapp className="text-xl" /> <span> +8801954345645</span>
+          </h1>
           <p>Email: equi-sport@gmail.com</p>
         </form>
       </footer>

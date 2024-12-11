@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { Tooltip } from "react-tooltip";
 import Theme from "./Theme";
+import { MdSportsVolleyball } from "react-icons/md";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -13,8 +14,8 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "bg-[#2196f3] text-lg text-white font-bold md:px-5 btn rounded-full hover:bg-transparent hover:text-[#2196f3]"
-              : "bg-white text-lg font-bold md:px-5 btn rounded-full hover:border-[#2196f3] hover:bg-transparent hover:text-[#2196f3]"
+              ? "bg-[#f55353] lg:text-base text-white font-bold md:px-5 btn rounded-full hover:bg-transparent hover:text-[#f55353]"
+              : "bg-white lg:text-base font-bold md:px-5 btn rounded-full hover:border-[#f55353] hover:bg-transparent hover:text-[#f55353]"
           }
         >
           Home
@@ -26,8 +27,8 @@ const Navbar = () => {
           to="/add-equipment"
           className={({ isActive }) =>
             isActive
-              ? "bg-[#2196f3] text-lg text-white font-bold md:px-5 btn rounded-full hover:bg-transparent hover:text-[#2196f3]"
-              : "bg-white text-lg font-bold md:px-5 btn rounded-full hover:border-[#2196f3] hover:bg-transparent hover:text-[#2196f3]"
+              ? "bg-[#f55353] lg:text-base text-white font-bold md:px-5 btn rounded-full hover:bg-transparent hover:text-[#f55353]"
+              : "bg-white lg:text-base font-bold md:px-5 btn rounded-full hover:border-[#f55353] hover:bg-transparent hover:text-[#f55353]"
           }
         >
           Add Equipment
@@ -38,8 +39,8 @@ const Navbar = () => {
           to="/all-sports-equipments"
           className={({ isActive }) =>
             isActive
-              ? "bg-[#2196f3] lg:text-lg text-white font-bold md:px-5 btn rounded-full hover:bg-transparent hover:text-[#2196f3]"
-              : "bg-white text-lg font-bold md:px-5 btn rounded-full hover:border-[#2196f3] hover:bg-transparent hover:text-[#2196f3]"
+              ? "bg-[#f55353] lg:text-base text-white font-bold md:px-4 btn rounded-full hover:bg-transparent hover:text-[#f55353]"
+              : "bg-white lg:text-base font-bold md:px-4 btn rounded-full hover:border-[#f55353] hover:bg-transparent hover:text-[#f55353]"
           }
         >
           All Sports Equipment
@@ -50,8 +51,8 @@ const Navbar = () => {
           to="/my-equipments"
           className={({ isActive }) =>
             isActive
-              ? "bg-[#2196f3] lg:text-lg text-white font-bold md:px-5 btn rounded-full hover:bg-transparent hover:text-[#2196f3]"
-              : "bg-white text-lg font-bold md:px-5 btn rounded-full hover:border-[#2196f3] hover:bg-transparent hover:text-[#2196f3]"
+              ? "bg-[#f55353] lg:text-base text-white font-bold md:px-5 btn rounded-full hover:bg-transparent hover:text-[#f55353]"
+              : "bg-white lg:text-base font-bold md:px-5 btn rounded-full hover:border-[#f55353] hover:bg-transparent hover:text-[#f55353]"
           }
         >
           My Equipment
@@ -89,8 +90,8 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/">
-            <a className="lg:btn lg:btn-ghost lg:text-[#2196f3] lg:text-3xl text-xl font-bold text-[#2196f3]">
-            GearUp Sports
+            <a className="lg:btn lg:btn-ghost lg:text-[#f55353] lg:text-3xl text-xl font-bold text-[#f55353]">
+            <MdSportsVolleyball />EquiSports
             </a>
           </Link>
         </div>
@@ -100,9 +101,13 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-
-          <div className="mr-5">
+          <div
+            className="mr-5"
+            data-tooltip-id="theme"
+            data-tooltip-content="dark/light theme"
+          >
             <Theme></Theme>
+            <Tooltip id="theme"></Tooltip>
           </div>
 
           <div className="md:pr-5 pr-4">
@@ -111,7 +116,7 @@ const Navbar = () => {
                 <img
                   data-tooltip-id="my-tooltip"
                   data-tooltip-content={user?.displayName}
-                  className="lg:w-12 lg:h-12 w-10 h-[10]  border-[#2196f3] border-2 rounded-full"
+                  className="lg:w-12 lg:h-12 w-10 h-[10]  border-[#f55353] border-2 rounded-full"
                   src={user?.photoURL}
                   alt=""
                 />
@@ -126,14 +131,14 @@ const Navbar = () => {
             {user && user?.email ? (
               <button
                 onClick={logOut}
-                className="bg-[#2196f3] lg:px-8 lg:py-3 px-2 py-2 lg:text-xl text-sm font-semibold rounded-full text-white"
+                className="bg-[#f55353] lg:px-8 lg:py-3 px-2 py-2 lg:text-xl text-sm font-semibold rounded-full text-white"
               >
                 Logout
               </button>
             ) : (
               <Link
                 to="/auth/login"
-                className="bg-[#2196f3] lg:px-8 lg:py-3 px-2 py-2 lg:text-xl font-semibold rounded-full text-white"
+                className="bg-[#f55353] lg:px-8 lg:py-3 px-2 py-2 lg:text-xl font-semibold rounded-full text-white"
               >
                 Login
               </Link>

@@ -11,7 +11,7 @@ const UpdateMyEquipment = () => {
     _id,
     image,
     itemName,
-    categoryName,
+    category,
     description,
     price,
     rating,
@@ -73,7 +73,7 @@ const UpdateMyEquipment = () => {
 
   return (
     <div className="md:w-[70%] h-auto">
-         <div className="mb-5">
+      <div className="mb-5">
         <Link to="/my-equipments">
           <button className="btn flex items-center gap-3 font-bold">
             <IoArrowBackOutline />
@@ -94,7 +94,7 @@ const UpdateMyEquipment = () => {
               type="url"
               name="image"
               placeholder="Enter image URL"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
               defaultValue={image}
             />
@@ -107,7 +107,7 @@ const UpdateMyEquipment = () => {
               type="text"
               name="itemName"
               placeholder="Enter item name"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
               defaultValue={itemName}
             />
@@ -120,9 +120,9 @@ const UpdateMyEquipment = () => {
               type="text"
               name="category"
               placeholder="Enter category name"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
-              defaultValue={categoryName}
+              defaultValue={category}
             />
           </div>
           <div className="form-control">
@@ -132,7 +132,7 @@ const UpdateMyEquipment = () => {
             <textarea
               name="description"
               placeholder="Enter description"
-              className="textarea textarea-bordered"
+              className="textarea textarea-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
               defaultValue={description}
             />
@@ -142,10 +142,10 @@ const UpdateMyEquipment = () => {
               <span className="label-text font-bold">Price</span>
             </label>
             <input
-              type="number"
+              type="text"
               name="price"
               placeholder="Enter price"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
               defaultValue={price}
             />
@@ -158,7 +158,7 @@ const UpdateMyEquipment = () => {
               type="text"
               name="rating"
               placeholder="Enter rating"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
               defaultValue={rating}
             />
@@ -171,7 +171,7 @@ const UpdateMyEquipment = () => {
               type="text"
               name="customization"
               placeholder="Enter customization details"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               defaultValue={customization}
             />
           </div>
@@ -183,7 +183,7 @@ const UpdateMyEquipment = () => {
               type="text"
               name="processingTime"
               placeholder="Enter delivery time"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
               defaultValue={processingTime}
             />
@@ -193,10 +193,10 @@ const UpdateMyEquipment = () => {
               <span className="label-text font-bold">Stock Status</span>
             </label>
             <input
-              type="number"
+              type="text"
               name="stockStatus"
               placeholder="Enter available quantity"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
               defaultValue={stockStatus}
             />
@@ -228,7 +228,7 @@ const UpdateMyEquipment = () => {
           <input
             type="submit"
             value="Update"
-            className="btn font-bold btn-primary w-full"
+            className="btn font-bold bg-[#f55353] w-full"
           />
         </form>
       </div>

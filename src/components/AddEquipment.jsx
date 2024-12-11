@@ -79,7 +79,7 @@ const AddEquipment = () => {
               type="url"
               name="image"
               placeholder="Enter image URL"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
             />
           </div>
@@ -91,7 +91,7 @@ const AddEquipment = () => {
               type="text"
               name="itemName"
               placeholder="Enter item name"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
             />
           </div>
@@ -103,7 +103,7 @@ const AddEquipment = () => {
               type="text"
               name="category"
               placeholder="Enter category name"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
             />
           </div>
@@ -114,7 +114,7 @@ const AddEquipment = () => {
             <textarea
               name="description"
               placeholder="Enter description"
-              className="textarea textarea-bordered"
+              className="textarea textarea-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
             />
           </div>
@@ -123,10 +123,10 @@ const AddEquipment = () => {
               <span className="label-text font-bold">Price</span>
             </label>
             <input
-              type="number"
+              type="text"
               name="price"
               placeholder="Enter price"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
             />
           </div>
@@ -138,8 +138,9 @@ const AddEquipment = () => {
               type="text"
               name="rating"
               placeholder="Enter rating (1.0-5.0)"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
+             
             />
           </div>
           <div className="form-control">
@@ -150,7 +151,7 @@ const AddEquipment = () => {
               type="text"
               name="customization"
               placeholder="Enter customization details"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
             />
           </div>
           <div className="form-control">
@@ -161,7 +162,7 @@ const AddEquipment = () => {
               type="text"
               name="processingTime"
               placeholder="Enter delivery time"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
             />
           </div>
@@ -170,10 +171,10 @@ const AddEquipment = () => {
               <span className="label-text font-bold">Stock Status</span>
             </label>
             <input
-              type="number"
+              type="text"
               name="stockStatus"
               placeholder="Enter available quantity"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               required
             />
           </div>
@@ -184,7 +185,7 @@ const AddEquipment = () => {
             <input
               type="email"
               name="email"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               readOnly
               defaultValue={user?.email}
             />
@@ -196,7 +197,7 @@ const AddEquipment = () => {
             <input
               type="text"
               name="name"
-              className="input input-bordered"
+              className="input input-bordered focus:outline-[#f55353] focus:border-[#ffffff]"
               readOnly
               defaultValue={user?.displayName}
             />
@@ -204,7 +205,7 @@ const AddEquipment = () => {
           <input
             type="submit"
             value="Submit"
-            className="btn font-bold btn-primary w-full"
+            className="btn font-bold bg-[#f55353] w-full"
           />
         </form>
       </div>

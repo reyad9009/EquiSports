@@ -1,3 +1,7 @@
+
+import { Rating } from '@smastrom/react-rating'
+
+import '@smastrom/react-rating/style.css'
 import React from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { Link, useLoaderData } from "react-router-dom";
@@ -39,12 +43,16 @@ const EquipmentDetails = () => {
             <span className="">Category: {category}</span>
             <span>Description : {description}</span>
             <span>Price : {price}</span>
-            <span>Rating : {rating}</span>
+          
             <span>Customization : {customization}</span>
             <span>Stock: {stockStatus}</span>
             <span>processingTime : {processingTime}</span>
+            <div className="flex gap-5 items-center">
+              <Rating style={{ maxWidth: 120 }} readOnly value={rating} />
+              <span className="text-lg">{rating}</span>
+            </div>
             <br />
-            <button className="btn bg-[#2196f3] mt-4 text-white text-lg">
+            <button className="btn bg-[#f55353] mt-4 text-white text-lg">
               Buy now
             </button>
           </div>

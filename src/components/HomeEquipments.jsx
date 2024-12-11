@@ -6,7 +6,7 @@ const HomeEquipments = () => {
   const homeEquipments = useLoaderData();
   return (
     <div>
-     
+     <h1 className="text-center font-bold text-4xl mt-16 mb-10">Trending Products</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10 items-end">
         {homeEquipments.map((equipment) => (
           <HomeEquipmentsCard
