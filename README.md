@@ -1,10 +1,9 @@
 # EquiSports
 
-## Live link : https://assignment-9-react-adfa5.web.app/
+## Live link : 
 
 ## Assignment Category: Lotus
 
-# Features:
 
 ## 1. User Management
 
@@ -22,11 +21,21 @@
 - My Profile & User profile Icon - its a private route. Only logged user see this.
 
 ## 3. User-Specific Equipment Management
-
+- Logged user can add Equipment.
+- Store Equipment in Mongodb based on the user's email.
 - Logged-in users can view all sports equipment they have added. This functionality filters and displays items based on the user's email.
 
-## 6. My Profile
+## 4. Update & Delete Equipment
+- Users can edit and update the details of their added equipment, such as price, description, category, and more. Updates are submitted to the backend for persistence.
 
-- Here show user data like - Gmail, User Name, Photo URL, Photo URL img.
-- Logged users can edit the name and photoURL and save the changes.
-- Update the user's information stored securely in Firebase.
+## 5. All Sports Equipment
+- All equipment show here by add Multiple users
+- Users can sort the equipment by price in ascending or descending order using a toggle button with interactive icons.
+
+## 6. Trending Products
+- In the home page here display at least 6 product card with a view details button
+- For showing 6 data from mongodb use the limit operator.
+
+## 7. Responsive and Interactive UI
+- The website uses Tailwind CSS for styling, ensuring a responsive and modern user interface. Features like transitions, grid layouts, and buttons provide a seamless and engaging experience. 
+- Integration of libraries <b>react-awesome-reveal</b> & <b>react-Tooltip</b>
