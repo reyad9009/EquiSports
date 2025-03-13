@@ -1,6 +1,6 @@
 # EquiSports
 
-## Live link : 
+## Live link : https://assignment-10-client-59d5b.web.app/
 
 ## Assignment Category: Lotus
 
